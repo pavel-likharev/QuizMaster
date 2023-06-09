@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e2e87925f695d439d7e2439adc09c5, type: 3}
   m_Name: Question 2
   m_EditorClassIdentifier: 
-  question: "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0427\u0435\u043B\u043E\u0432\u0435\u043A\u043E\u0432-\u043F\u0430\u0443\u043A\u043E\u0432
-    \u0435\u0441\u0442\u044C \u0432 \u043A\u0438\u043D\u043E\u0432\u0441\u0435\u043B\u0435\u043D\u043D\u043E\u0439?"
+  question: "\rHow many Spider-Man are there in the MCU?"
   answers:
   - 2
   - 1

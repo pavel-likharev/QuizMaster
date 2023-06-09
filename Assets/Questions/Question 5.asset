@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e2e87925f695d439d7e2439adc09c5, type: 3}
   m_Name: Question 5
   m_EditorClassIdentifier: 
-  question: "\u041A\u0430\u043A\u043E\u0439 \u0432\u0440\u0430\u0433 \u0427\u0435\u043B\u043E\u0432\u0435\u043A\u0430-\u043F\u0430\u0443\u043A\u0430
-    \u0441\u0442\u0430\u043B \u0421\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u043D\u044B\u043C
-    \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u043E\u043C-\u043F\u0430\u0443\u043A\u043E\u043C?"
+  question: Which enemy of Spider-Man became the Spectacular Spider-Man?
   answers:
-  - "\u042F\u0449\u0435\u0440"
-  - "\u0417\u0435\u043B\u0435\u043D\u044B\u0439 \u0433\u043E\u0431\u043B\u0438\u043D"
-  - "\u041A\u0438\u043D\u0433\u043F\u0438\u043D"
-  - "\u0414\u043E\u043A\u0442\u043E\u0440 \u041E\u0441\u044C\u043C\u0438\u043D\u043E\u0433"
+  - Lizard
+  - Green Goblin
+  - Kingpin
+  - Doctor Octavius
   correctAnswerIndex: 3
