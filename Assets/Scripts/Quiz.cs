@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class Quiz : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Quiz : MonoBehaviour
     [SerializeField] Sprite defaultAnswerSprite;
     [SerializeField] Sprite correctAnswerSprite;
     int correctAnswerIndex;
-    bool hasAnsweredEarly;
+    bool hasAnsweredEarly = true;
 
     [Header("Timer")]
     [SerializeField] Image timerImage;
@@ -28,14 +29,23 @@ public class Quiz : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     ScoreKeeper scoreKeeper;
 
+
     [Header("ProgressBar")]
     [SerializeField] Slider progressBar;
-    bool isComplete;
+    public bool isComplete;
 
-    void Start()
+    [Header("GameOver")]
+    [SerializeField] GameObject gameOverCanvas;
+    [SerializeField] TextMeshProUGUI resultText;
+
+    void Awake()
     {
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+    }
+
+    void Start()
+    {
         progressBar.maxValue = questions.Count;
         progressBar.value = 0;
     }
@@ -46,9 +56,15 @@ public class Quiz : MonoBehaviour
 
         if (timer.loadNextQuestion)
         {
+            if (progressBar.value == progressBar.maxValue)
+            {
+                isComplete = true;
+                return;
+            }
+
+            hasAnsweredEarly = false;
             GetNextQuestion();
             timer.loadNextQuestion = false;
-            hasAnsweredEarly = false;
         }
         else if (!hasAnsweredEarly && !timer.isAnsweringQuestion)
         {
@@ -138,10 +154,5 @@ public class Quiz : MonoBehaviour
         SetButtonState(false);
         timer.CancelTimer();
         scoreText.text = $"Score: {scoreKeeper.CalculateScore()}%";
-
-        if (progressBar.value == progressBar.maxValue)
-        {
-            isComplete = true;
-        }
     }
 }

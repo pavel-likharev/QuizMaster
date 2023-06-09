@@ -13,8 +13,6 @@ public class Timer : MonoBehaviour
     public bool loadNextQuestion;
     public bool isAnsweringQuestion;
 
-    public 
-
     void Update()
     {
         UpdateTimer();
